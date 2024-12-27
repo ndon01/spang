@@ -1,0 +1,62 @@
+spring:
+  application:
+    name: ${SPRING_APPLICATION_NAME:api}
+  servlet:
+    multipart:
+      max-file-size: ${SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE:100MB}
+      max-request-size: ${SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE:100MB}
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5001/clms}
+    username: ${SPRING_DATASOURCE_USERNAME:admin}
+    password: ${SPRING_DATASOURCE_PASSWORD:changeme}
+  cloud:
+    aws:
+      s3:
+        endpoint: ${SPRING_CLOUD_AWS_S3_ENDPOINT:http://s3.localhost.localstack.cloud:4566}
+        region: ${SPRING_CLOUD_AWS_S3_REGION:us-east-1}
+        path-style-access-enabled: true
+      credentials:
+        access-key: ${SPRING_CLOUD_AWS_CREDENTIALS_ACCESS_KEY:localstack}
+        secret-key: ${SPRING_CLOUD_AWS_CREDENTIALS_SECRET_KEY:localstack}
+      region:
+        static: ${SPRING_CLOUD_AWS_REGION_STATIC:us-east-1}
+  jpa:
+    show-sql: ${SPRING_JPA_SHOW_SQL:false}
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:validate}
+    properties:
+      hibernate:
+        dialect: ${SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT:org.hibernate.dialect.PostgreSQLDialect}
+  mvc:
+    pathmatch:
+      matching-strategy: ${SPRING_MVC_PATHMATCH_MATCHING_STRATEGY:ant_path_matcher}
+  jackson:
+    serialization:
+      fail-on-empty-beans: ${SPRING_JACKSON_SERIALIZATION_FAIL_ON_EMPTY_BEANS:false}
+springdoc:
+  api-docs:
+    enabled: ${SPRINGDOC_API_DOCS_ENABLED:true}
+    path: ${SPRINGDOC_API_DOCS_PATH:/api-docs}
+  swagger-ui:
+    enabled: ${SPRINGDOC_SWAGGER_UI_ENABLED:true}
+    path: ${SPRINGDOC_SWAGGER_UI_PATH:/swagger-ui.html}
+
+clms:
+  s3:
+    default-bucket-name: ${CLMS_S3_DEFAULT_BUCKET_NAME:spang}
+  admin-user:
+    enabled: ${CLMS_ADMIN_USER_ENABLED:false}
+    username: ${CLMS_ADMIN_USER_USERNAME:admin}
+    password: ${CLMS_ADMIN_USER_PASSWORD:changeme}
+  security:
+    access-token:
+      expiration-time: ${CLMS_SECURITY_ACCESS_TOKEN_EXPIRATION_TIME:86400000}
+      secret: ${CLMS_SECURITY_ACCESS_TOKEN_SECRET:changeme}
+    oauth2:
+      google:
+        client-id: ${GOOGLE_OAUTH_CLIENT_ID:}
+        client-secret: ${GOOGLE_OAUTH_CLIENT_SECRET:}
+        redirect-uri: ${GOOGLE_OAUTH_REDIRECT_URI:}
+        enabled: ${GOOGLE_OAUTH_ENABLED:false}
+  password:
+    strength: ${CLMS_PASSWORD_STRENGTH:10}

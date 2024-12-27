@@ -1,0 +1,53 @@
+  @import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+@import "../node_modules/quill/dist/quill.core.css";
+@import "../node_modules/quill/dist/quill.snow.css";
+@import "../node_modules/quill/dist/quill.bubble.css";
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.lms-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: max-content;
+  background-color: var(--surface-d);
+  padding: 25px
+}
+
+.bg-surface-a {
+  background-color: var(--surface-a);
+}
+
+.bg-surface-b {
+  background-color: var(--surface-b);
+}
+
+.bg-surface-c {
+  background-color: var(--surface-c);
+}
+
+.bg-surface-d {
+  background-color: var(--surface-d);
+}
+
+.bg-surface-e {
+  background-color: var(--surface-e);
+}
+
+.text-color-primary {
+  color: var(--text-color);
+}
+
+.text-color-secondary {
+  color: var(--text-color-secondary);
+}
+.card-color-border{
+  color:var(--primary-color)
+}
+

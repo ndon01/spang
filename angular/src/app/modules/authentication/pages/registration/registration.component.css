@@ -1,0 +1,76 @@
+.login-page-background {
+  background-color: var(--surface-e); /* Uniform background */
+  color: var(--text-color); /* Text color */
+  min-height: 100vh;
+}
+
+.login-page-title-text {
+  font-family: 'Inter';
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-color); /* Use the white text color from your theme */
+  text-align: center; /* Center align the title */
+  animation: fadeIn 1.5s ease-out;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: var(--surface-b);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--border-radius);
+  color: var(--text-color);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.input-field:focus {
+  outline: none;
+  box-shadow: 0 0 4px var(--primary-color);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--primary-color-text);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: rgba(52, 211, 153, 0.8);
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid var(--surface-border);
+  background-color: transparent;
+  color: var(--text-color-secondary);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--primary-color-text);
+  border: none;
+}
+
+.password-requirements span {
+  color: var(--text-color-secondary);
+}
+
+.input-error {
+  border: 1px solid red;
+}

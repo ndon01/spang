@@ -1,0 +1,94 @@
+<div class="flex flex-col h-full login-page-background">
+  <!-- Navbar -->
+  <div class="flex flex-row w-full h-10 justify-between items-center px-3 pt-2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left cursor-pointer" viewBox="0 0 16 16" (click)="location.back()">
+      <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+    </svg>
+    <img src="/angular/src/assets/favicon.png" alt="Logo" class="h-6">
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex flex-col justify-center items-center mt-5">
+    <div class="login-page-title-text text-center fade-in">Register an Account</div>
+
+    <!-- Form -->
+    <div class="flex flex-col justify-center items-center w-72 gap-5 mt-5 appear-second">
+      <div class="flex flex-col gap-2 w-full">
+        <label for="username" class="text-xs text-color-primary">Username</label>
+        <input
+          pTooltip
+          [tooltipDisabled]="!isInvalidCredentials"
+          pTooltip="Invalid Credentials"
+          id="username"
+          name="username"
+          type="text"
+          placeholder="Enter your Username"
+          class="input-field"
+          [formControl]="username"
+          [class.input-error]="isInvalidCredentials"
+        />
+      </div>
+
+      <div class="flex flex-col gap-2 w-full">
+        <label for="password" class="text-xs text-color-primary">Password</label>
+        <input
+          pTooltip
+          [tooltipDisabled]="!isInvalidCredentials"
+          pTooltip="Invalid Credentials"
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Pick your Password"
+          class="input-field"
+          [formControl]="password"
+          [class.input-error]="isInvalidCredentials"
+        />
+        <div class="password-requirements text-xxs mt-2">
+          <span [ngClass]="{ 'text-green-600': !password.errors?.['uppercase'], 'text-red-600': password.errors?.['uppercase'] }">
+            {{ password.errors?.['uppercase'] || !password.dirty ? '✘' : '✔' }} 1 Uppercase Character
+          </span><br />
+          <span [ngClass]="{ 'text-green-600': !password.errors?.['lowercase'], 'text-red-600': password.errors?.['lowercase'] }">
+            {{ password.errors?.['lowercase'] || !password.dirty ? '✘' : '✔' }} 1 Lowercase Character
+          </span><br />
+          <span [ngClass]="{ 'text-green-600': !password.errors?.['digit'], 'text-red-600': password.errors?.['digit'] }">
+            {{ password.errors?.['digit'] || !password.dirty ? '✘' : '✔' }} 1 Numerical Character
+          </span><br />
+          <span [ngClass]="{ 'text-green-600': !password.errors?.['specialChar'], 'text-red-600': password.errors?.['specialChar'] }">
+            {{ password.errors?.['specialChar'] || !password.dirty ? '✘' : '✔' }} 1 Special Character (!&#64;#$%^&*()-_+=)
+          </span><br />
+          <span [ngClass]="{ 'text-green-600': !password.errors?.['length'], 'text-red-600': password.errors?.['length'] }">
+            {{ password.errors?.['length'] || !password.dirty ? '✘' : '✔' }} Between 10 and 64 characters long
+          </span>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2 w-full">
+        <label for="confirm-password" class="text-xs text-color-primary">Confirm Password</label>
+        <input
+          pTooltip
+          [tooltipDisabled]="!isInvalidCredentials"
+          pTooltip="Invalid Credentials"
+          id="confirm-password"
+          name="confirm-password"
+          type="password"
+          placeholder="Re-enter your Password"
+          class="input-field"
+          [formControl]="confirmPassword"
+          [class.input-error]="isInvalidCredentials"
+        />
+        <div *ngIf="password.value !== confirmPassword.value && confirmPassword.dirty" class="text-red-600 text-xxs mt-1">
+          Passwords must match
+        </div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex flex-col justify-center items-center gap-3 mt-5 mb-10">
+      <button class="btn-primary" (click)="onSubmit()" [disabled]="password.invalid || username.invalid || confirmPassword.invalid || password.value !== confirmPassword.value">
+        Register
+      </button>
+      <div class="h-px w-full bg-surface-border"></div>
+      <button class="btn-secondary" routerLink="/login">Already have an account?</button>
+    </div>
+  </div>
+</div>

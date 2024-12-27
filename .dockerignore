@@ -1,0 +1,28 @@
+# Ignore build directories
+.angular
+angular/node_modules
+angular/dist
+angular/target
+angular/.angular
+
+
+reactnative
+
+docker/localstack/data
+
+# Ignore version control
+.git
+.idea
+.github
+.mvn
+.run
+.vscode
+.gitignore
+
+# Ignore IDE/project files
+*.log
+*.tmp
+.DS_Store
+
+# Ignore operating system files
+Thumbs.db

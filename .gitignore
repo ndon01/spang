@@ -1,0 +1,10 @@
+.idea
+*.iml
+target
+*.class
+*-local.yaml
+.gitconfig
+*.css.map
+
+docker/localstack/data/.gitkeep
+openapitools.json

@@ -1,0 +1,121 @@
+/* General landing container */
+.landing-container {
+  background-color: var(--surface-e); /* Matches theme */
+  color: var(--text-color); /* Matches theme */
+  min-height: 100vh; /* Full screen */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation Bar */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--surface-d); /* Navbar matches theme */
+  height: 60px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo and Title */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* Buttons */
+.navbar-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--surface-900);
+  color: var(--surface-d);
+  border: none;
+  border-radius: var(--border-radius, 6px);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-btn:hover {
+  background-color: var(--surface-hover);
+  color: var(--primary-color);
+}
+
+/* Main Content */
+.landing-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  gap: 1rem;
+}
+
+.landing-main-title {
+  font-size: 3rem; /* Increased font size for the title */
+  font-weight: bold;
+  color: var(--primary-color);
+  animation: fadeIn 1.5s ease-out;
+}
+
+.landing-main-text {
+  font-size: 1.5rem; /* Increased font size for the text */
+  color: var(--text-color-secondary);
+  max-width: 600px;
+  line-height: 1.75; /* Adjusted for better readability */
+  animation: fadeIn 1.5s ease-out 0.5s;
+}
+
+.landing-main-cta {
+  margin-top: 2rem;
+  animation: fadeIn 1.5s ease-out 1s;
+}
+
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem; /* Increased button font size */
+  font-weight: bold;
+  color: var(--primary-color-text);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--border-radius, 6px);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: rgba(52, 211, 153, 0.8);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

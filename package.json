@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "spring:generate-openapi-docs": "cd api && mvnw springdoc-openapi:generate",
+    "angular:generate-types": "npx openapi-generator-cli generate -i ./api/target/openapi.json -g typescript-angular -o angular/src/app/core/modules/openapi --additional-properties fileNaming=kebab-case,withInterfaces=true --generate-alias-as-model",
+    "react-native:generate-types": "npx openapi-generator-cli generate -i api/target/openapi.json -g typescript-axios -o ./reactnative/core/modules/openapi",
+    "all:generate-types": "cd scripts && node generate-types-all.js",
+    "sprint:setup-env": "cd scripts && node setup-env.js"
+  }
+}
