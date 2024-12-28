@@ -26,13 +26,13 @@ public class AdminUserConfiguration implements ApplicationListener<ApplicationRe
     private final RoleRepository roleRepository;
     private final PermissionRepository permissionRepository;
 
-    @Value("${clms.admin-user.password:Changeme#2024}")
+    @Value("${app.admin-user.password:Changeme#2024}")
     private String defaultPassword;
 
-    @Value("${clms.admin-user.username:Admin}")
+    @Value("${app.admin-user.username:Admin}")
     private String adminUsername;
 
-    @Value("${clms.admin-user.enabled:false}")
+    @Value("${app.admin-user.enabled:false}")
     private boolean adminUserEnabled;
 
     @Override
@@ -79,6 +79,5 @@ public class AdminUserConfiguration implements ApplicationListener<ApplicationRe
         adminUser.setPermissions(permissionRepository.findAll().stream().collect(Collectors.toSet()));
         adminUser.setUsername(adminUsername);
         userRepository.save(adminUser);
-
     }
 }

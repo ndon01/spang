@@ -1,2 +1,0 @@
-ALTER TABLE IF EXISTS authentication_profiles
-ADD COLUMN IF NOT EXISTS google_id VARCHAR(255);

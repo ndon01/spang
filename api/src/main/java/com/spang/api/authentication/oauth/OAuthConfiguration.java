@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Data
 @Configuration
-@ConfigurationProperties(prefix = "clms.security.oauth2.google")
+@ConfigurationProperties(prefix = "app.security.oauth2.google")
 public class OAuthConfiguration {
     private boolean enabled = false;
     private String clientId;

@@ -8,15 +8,15 @@ services:
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=changeme
-      - POSTGRES_DB=clms
+      - POSTGRES_DB=app
     ports:
       - "5001:5432"
     volumes:
       - database-volume:/var/lib/postgresql/data
   localstack:
     build:
-        context: docker/localstack
-        dockerfile: docker/localstack/Dockerfile
+        context: ./docker/localstack
+        dockerfile: Dockerfile
     ports:
       - "4566:4566"            # LocalStack Gateway
       - "4510-4559:4510-4559"  # external services port range

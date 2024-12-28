@@ -14,7 +14,7 @@
               <option value="test" />
             </list>
           </option>
-          <option name="pomFileName" value="./clms-api" />
+          <option name="pomFileName" value="./api" />
           <option name="profilesMap">
             <map />
           </option>

@@ -26,8 +26,8 @@ public class FileStorageService {
     private final FileMetadataRepository fileMetadataRepository;
     private final S3Client s3Client;
 
-    @Value("${clms.s3.default-bucket-name:clms}")
-    private final String defaultBucketName = "clms";
+    @Value("${app.s3.default-bucket-name:app}")
+    private final String defaultBucketName = "app";
     private final String defaultLocation = "files";
 
     public FileMetadata createFile(MultipartFile file) {
