@@ -1,9 +1,9 @@
 import {Injectable, OnInit, WritableSignal} from '@angular/core';
-import {User, UserProjection} from "@core/model/User.model";
 import {HttpClient} from "@angular/common/http";
 import {ClientDataSourceService} from "@core/services/client-data-source.service";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {Router} from "@angular/router";
+import {User, UserProjection} from "@core/modules/openapi";
 
 export type INullish = undefined | null
 
@@ -15,7 +15,7 @@ export type IAppClient = {
   providedIn: 'root'
 })
 export class ClientService implements OnInit {
-  private user: UserProjection | null = null;
+  private user: User | null = null;
   private authenticated: boolean = false;
 
   private clientPermissions: Map<string, boolean> = new Map();

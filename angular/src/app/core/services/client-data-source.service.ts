@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {UserProjection} from "@core/model/User.model";
+import {User} from "@core/modules/openapi";
 
 
 
@@ -14,7 +14,7 @@ interface DatasourceService<T> {
   providedIn: 'root'
 })
 export class ClientDataSourceService {
-  private source: BehaviorSubject<UserProjection | null> = new BehaviorSubject<UserProjection | null>(null);
+  private source: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null);
 
   constructor(private httpClient: HttpClient) {
     let save = localStorage.getItem('client_data')
@@ -29,7 +29,7 @@ export class ClientDataSourceService {
   }
 
   refresh() {
-    this.httpClient.get<UserProjection>('/api/v1/users/client', {
+    this.httpClient.get<User>('/api/v1/users/client', {
       observe: 'response',
     }).subscribe(data =>{
       if (data.status === 200) {

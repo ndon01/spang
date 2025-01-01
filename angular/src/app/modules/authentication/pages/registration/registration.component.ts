@@ -1,14 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule, ValidationErrors } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { NavbarComponent } from '@core/components/navbar/navbar.component';
-import {
-  InputQuestionComponentComponent
-} from '@shared/ui/input-question-component/input-question-component/input-question-component.component';
 import { AsyncPipe, Location, NgClass } from '@angular/common';
 import { RegistrationService } from '@modules/authentication/pages/registration/registration.service';
 import { LoadingAmbianceService, LoadingAmbianceState } from '@core/services/loading-ambiance/loading-ambiance.service';
-import { PasswordInputFieldComponent } from '@shared/ui/password-input-field/password-input-field.component';
 import { catchError, map, tap } from 'rxjs';
 
 enum ValidationStateEnum {
